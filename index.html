@@ -15,7 +15,6 @@
         * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 
         :root {
-            /* 🔴 لوحة ألوان جديدة: أحمر + أسود + أبيض */
             --red-1: #ff4757;
             --red-2: #ee2b3d;
             --red-3: #c81e2e;
@@ -60,7 +59,6 @@
             position: relative;
         }
 
-        /* ═════ جزيئات متوهجة حمراء متحركة ═════ */
         body::before,
         body::after {
             content: '';
@@ -87,15 +85,11 @@
             50% { transform: translate(45px, -45px) scale(1.15); }
         }
 
-        /* ═════ أنيميشن تدفق التدرج اللوني ═════ */
         @keyframes colorFlow {
             0%, 100% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
         }
 
-        /* ═══════════════════════════════════════════════
-           زر تبديل اللغة
-           ═══════════════════════════════════════════════ */
         .lang-toggle {
             position: fixed;
             top: max(14px, env(safe-area-inset-top));
@@ -139,9 +133,6 @@
             box-shadow: 0 0 16px var(--red-glow);
         }
 
-        /* ═══════════════════════════════════════════════
-           Auth View - بتصميم بطاقة قوانين الباند
-           ═══════════════════════════════════════════════ */
         #authView {
             max-width: 460px;
             width: 100%;
@@ -155,7 +146,6 @@
             z-index: 1;
         }
 
-        /* البطاقة الرئيسية بتصميم الصورة */
         .auth-card {
             background: var(--gradient-flow);
             background-size: 200% 200%;
@@ -173,7 +163,6 @@
             overflow: hidden;
         }
 
-        /* خط علوي متوهج */
         .auth-card::before {
             content: '';
             position: absolute;
@@ -189,7 +178,6 @@
             to { opacity: 1; transform: translateY(0) scale(1); }
         }
 
-        /* أيقونة التحذير (SVG أحمر) */
         .warn-icon {
             display: flex;
             justify-content: center;
@@ -204,18 +192,17 @@
         }
 
         .warn-icon svg {
-            width: 60px;
-            height: 60px;
-            filter: drop-shadow(0 0 14px rgba(255, 0, 0, 0.8));
+            width: 64px;
+            height: 64px;
+            filter: drop-shadow(0 0 14px rgba(255, 34, 51, 0.9));
             animation: warnPulse 2s ease-in-out infinite;
         }
 
         @keyframes warnPulse {
             0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.1); }
+            50% { transform: scale(1.08); }
         }
 
-        /* الترويسة */
         .auth-brand { text-align: center; margin-bottom: 18px; }
 
         .auth-brand h1 {
@@ -233,14 +220,12 @@
             font-weight: 500;
         }
 
-        /* فاصل بعد الترويسة (مثل الصورة) */
         .auth-divider-line {
             height: 1px;
             background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
             margin: 14px 0 18px;
         }
 
-        /* التبويبات */
         .auth-tabs {
             display: flex;
             background: rgba(0, 0, 0, 0.35);
@@ -270,7 +255,6 @@
             box-shadow: 0 3px 12px rgba(0, 0, 0, 0.35);
         }
 
-        /* الحقول */
         .form-group { margin-bottom: 14px; }
 
         .form-group label {
@@ -307,7 +291,6 @@
 
         .form-group input[dir="ltr"] { direction: ltr; text-align: left; }
 
-        /* الأزرار */
         .auth-btn {
             width: 100%;
             padding: 15px;
@@ -328,7 +311,6 @@
         .auth-btn:active { transform: scale(0.97); }
         .auth-btn:disabled { opacity: 0.6; cursor: not-allowed; }
 
-        /* زر أبيض (مثل "فهمت" في الصورة) */
         .auth-btn.primary {
             background: #ffffff;
             color: var(--red-3);
@@ -342,7 +324,6 @@
             transform: translateY(-2px);
         }
 
-        /* زر Google */
         .auth-btn.google {
             background: rgba(255, 255, 255, 0.97);
             color: #1a1f2e;
@@ -420,7 +401,6 @@
             font-weight: 600;
         }
 
-        /* زر "ذكرني لاحقاً" (شفاف بحدود حمراء) */
         .auth-later-btn {
             width: 100%;
             padding: 13px;
@@ -444,9 +424,6 @@
             transform: translateY(-2px);
         }
 
-        /* ═══════════════════════════════════════════════
-           App View - لوحة التحكم
-           ═══════════════════════════════════════════════ */
         #appView { display: none; min-height: 100vh; flex-direction: column; position: relative; z-index: 1; }
 
         .topbar {
@@ -549,7 +526,6 @@
             padding: 16px 14px 130px;
         }
 
-        /* شبكة الإحصائيات */
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -615,7 +591,6 @@
             margin-top: 3px;
         }
 
-        /* التبويبات */
         .tabs-row {
             display: flex;
             gap: 8px;
@@ -653,7 +628,6 @@
 
         .tab-pill:active { transform: scale(0.96); }
 
-        /* البطاقات */
         .card {
             background: rgba(20, 5, 8, 0.7);
             border-radius: var(--radius-lg);
@@ -701,7 +675,6 @@
         .badge.warning { background: #f59e0b; color: #1a1004; }
         .badge.danger { background: #ff4757; color: #fff; }
 
-        /* منطقة السحب */
         .drop-zone {
             border: 2px dashed rgba(255, 71, 87, 0.6);
             border-radius: var(--radius-lg);
@@ -724,7 +697,6 @@
         .drop-zone .text { font-size: 15px; color: #fff; font-weight: 800; }
         .drop-zone .hint { font-size: 12px; color: var(--text-dim); margin-top: 6px; font-weight: 600; }
 
-        /* المعاينة */
         .preview {
             display: none;
             position: relative;
@@ -765,7 +737,6 @@
 
         .preview .remove-btn:active { transform: scale(0.9); }
 
-        /* صف المعلومات */
         .info-row {
             display: flex;
             justify-content: space-between;
@@ -781,7 +752,6 @@
             border: 1px solid rgba(255, 34, 51, 0.3);
         }
 
-        /* الأزرار الأساسية */
         .btn {
             width: 100%;
             padding: 16px;
@@ -802,7 +772,6 @@
         .btn:active { transform: scale(0.97); }
         .btn:disabled { opacity: 0.4; cursor: not-allowed; }
 
-        /* زر أبيض (مثل "فهمت" في الصورة) */
         .btn-primary {
             background: #ffffff;
             color: var(--red-3);
@@ -816,7 +785,6 @@
             transform: translateY(-2px);
         }
 
-        /* زر شفاف (مثل "ذكرني لاحقاً" في الصورة) */
         .btn-outline {
             background: rgba(0, 0, 0, 0.3);
             color: var(--red-neon);
@@ -830,7 +798,6 @@
             box-shadow: 0 0 25px var(--red-glow);
         }
 
-        /* المحمّل */
         .loader {
             display: none;
             text-align: center;
@@ -851,7 +818,6 @@
 
         .loader .txt { font-size: 13px; color: var(--text-dim); font-weight: 700; }
 
-        /* نتيجة الرفع */
         .result {
             display: none;
             padding: 18px;
@@ -928,7 +894,6 @@
         .btn-open { background: #10b981; }
         .btn-img { background: #f59e0b; }
 
-        /* المعرض */
         .gallery {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
@@ -1041,7 +1006,6 @@
         .empty .big { font-size: 60px; display: block; margin-bottom: 12px; opacity: 0.5; }
         .empty p { font-size: 14px; font-weight: 600; }
 
-        /* السجل */
         .history-list { display: flex; flex-direction: column; gap: 10px; }
 
         .history-row {
@@ -1106,7 +1070,6 @@
             border: 1px solid rgba(16, 185, 129, 0.4);
         }
 
-        /* الإعلانات */
         .ad-banner-bottom {
             position: fixed;
             bottom: 70px;
@@ -1234,7 +1197,6 @@
             min-height: 50px;
         }
 
-        /* شريط التنقل السفلي */
         .bottom-nav {
             position: fixed;
             bottom: 0;
@@ -1292,7 +1254,6 @@
 
         .nav-fab:active { transform: scale(0.92); }
 
-        /* Toast */
         .toast {
             position: fixed;
             bottom: 150px;
@@ -1367,7 +1328,6 @@
 
         .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 
-        /* النافذة المنبثقة */
         .modal-overlay {
             position: fixed;
             inset: 0;
@@ -1544,23 +1504,24 @@
 </head>
 <body>
 
-    <!-- ═════ زر تبديل اللغة ═════ -->
     <div class="lang-toggle">
         <button type="button" class="lang-btn active" id="langAr">🇸🇦 عربي</button>
         <button type="button" class="lang-btn" id="langEn">🇬🇧 EN</button>
     </div>
 
-    <!-- ═══════════════════════════════════════════════
-         Auth View
-         ═══════════════════════════════════════════════ -->
     <div id="authView">
         <div class="auth-card">
-            <!-- أيقونة تحذير SVG -->
+            <!-- 🖼️ أيقونة رفع الصور الاحترافية (سحابة + سهم + صورة) -->
             <div class="warn-icon">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 2L1 21h22L12 2z" stroke="#ff2233" stroke-width="2.2" stroke-linejoin="round" fill="none"/>
-                    <path d="M12 9v6" stroke="#ff2233" stroke-width="2.5" stroke-linecap="round"/>
-                    <circle cx="12" cy="18.5" r="1.3" fill="#ff2233"/>
+                <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="32" cy="32" r="30" stroke="#ff2233" stroke-width="2" stroke-opacity="0.3" fill="none"/>
+                    <path d="M20 40 Q14 40 14 34 Q14 28 20 28 Q21 22 28 22 Q34 22 36 26 Q38 24 42 24 Q48 24 50 30 Q54 31 54 36 Q54 42 48 42 L20 42 Z"
+                          stroke="#ffffff" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round" fill="rgba(255,255,255,0.15)"/>
+                    <path d="M32 38 L32 26" stroke="#ff2233" stroke-width="2.8" stroke-linecap="round"/>
+                    <path d="M27 31 L32 26 L37 31" stroke="#ff2233" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="round" fill="none"/>
+                    <rect x="44" y="44" width="12" height="10" rx="2" stroke="#ff2233" stroke-width="2" fill="rgba(255,34,51,0.15)"/>
+                    <circle cx="48" cy="48" r="1.3" fill="#ff2233"/>
+                    <path d="M44 53 L48 49 L51 52 L54 50 L56 52" stroke="#ff2233" stroke-width="1.8" stroke-linejoin="round" fill="none"/>
                 </svg>
             </div>
 
@@ -1625,9 +1586,6 @@
         </div>
     </div>
 
-    <!-- ═══════════════════════════════════════════════
-         App View
-         ═══════════════════════════════════════════════ -->
     <div id="appView">
 
         <div class="topbar">
@@ -1683,7 +1641,6 @@
                 <button class="tab-pill" data-view="history" data-i18n="tab_history">🕐 السجل</button>
             </div>
 
-            <!-- قسم الرفع -->
             <div id="sectionUpload">
                 <div class="card">
                     <div class="card-header">
@@ -1727,7 +1684,6 @@
                     </div>
                 </div>
 
-                <!-- إعلان داخل الصفحة -->
                 <div class="ad-inpage" id="adInPageUpload">
                     <div class="ad-inpage-header">
                         <span class="ad-inpage-label">إعلان · Ad</span>
@@ -1737,7 +1693,6 @@
                 </div>
             </div>
 
-            <!-- قسم المعرض -->
             <div id="sectionGallery" style="display:none;">
                 <div class="card">
                     <div class="card-header">
@@ -1761,7 +1716,6 @@
                 </div>
             </div>
 
-            <!-- قسم السجل -->
             <div id="sectionHistory" style="display:none;">
                 <div class="card">
                     <div class="card-header">
@@ -1787,14 +1741,12 @@
 
         </div>
 
-        <!-- إعلان سفلي -->
         <div class="ad-banner-bottom" id="adBannerBottom">
             <button class="ad-close" id="adCloseBtn" title="إغلاق">✕</button>
             <span class="ad-label">إعلان · Ad</span>
             <div id="container-272c44df2e38e34bc16b9f80978efab2-fixed"></div>
         </div>
 
-        <!-- شريط التنقل -->
         <div class="bottom-nav">
             <button class="nav-item active" data-view="upload">
                 <span class="nav-icon">🏠</span>
@@ -1816,7 +1768,6 @@
         </div>
     </div>
 
-    <!-- نافذة الملف الشخصي -->
     <div class="modal-overlay" id="profileModal">
         <div class="modal">
             <div class="modal-header">
@@ -1875,9 +1826,6 @@
     <script async="async" data-cfasync="false" src="https://pl29581573.profitableratecpmnetwork.com/272c44df2e38e34bc16b9f80978efab2/invoke.js"></script>
 
     <script>
-        // ═══════════════════════════════════════════════
-        // 🌐 نظام اللغتين
-        // ═══════════════════════════════════════════════
         const I18N = {
             ar: {
                 brand: 'ImageHub', brand_sub: 'منصتك الذكية لرفع وإدارة الصور',
@@ -2058,9 +2006,6 @@
         } catch (e) {}
         applyLanguage(currentLang);
 
-        // ═══════════════════════════════════════════════
-        // 🔥 Firebase
-        // ═══════════════════════════════════════════════
         const FIREBASE_CONFIG = {
             apiKey: "AIzaSyBHnknMBiVdigipFyLMNkdFcm_tOQKWc-4",
             authDomain: "aktubar98.firebaseapp.com",
@@ -2090,9 +2035,6 @@
         let uploadedUrl = '';
         let userImages = [];
 
-        // ═══════════════════════════════════════════════
-        // Ad management
-        // ═══════════════════════════════════════════════
         const AD_DURATION = 2 * 60 * 60 * 1000;
 
         function closeAd(elementId, storageKey) {
@@ -2135,9 +2077,6 @@
             }
         }
 
-        // ═══════════════════════════════════════════════
-        // Toast
-        // ═══════════════════════════════════════════════
         function showToast(text, type = 'info', title = null) {
             const tt = $('toast');
             const icon = $('toastIcon');
@@ -2171,9 +2110,6 @@
 
         function setAuthLoading(state) { authLoader.classList.toggle('show', state); }
 
-        // ═══════════════════════════════════════════════
-        // Helpers
-        // ═══════════════════════════════════════════════
         function formatSize(bytes) {
             if (!bytes) return '0 B';
             if (bytes < 1024) return bytes + ' B';
@@ -2193,7 +2129,6 @@
             if (!ts) return '—';
             const diff = Date.now() - ts;
             const sec = Math.floor(diff / 1000);
-            const locale = currentLang === 'ar' ? 'ar-EG' : 'en-US';
             if (sec < 60) return currentLang === 'ar' ? 'الآن' : 'now';
             const min = Math.floor(sec / 60);
             if (min < 60) return currentLang === 'ar' ? 'منذ ' + min + ' دقيقة' : min + 'm ago';
@@ -2239,9 +2174,6 @@
             return txt.trim().charAt(0).toUpperCase();
         }
 
-        // ═══════════════════════════════════════════════
-        // Tabs Auth
-        // ═══════════════════════════════════════════════
         $('tabLogin').addEventListener('click', () => {
             $('tabLogin').classList.add('active');
             $('tabSignup').classList.remove('active');
@@ -2255,9 +2187,6 @@
             $('loginForm').style.display = 'none';
         });
 
-        // ═══════════════════════════════════════════════
-        // Login / Signup / Forgot / Google
-        // ═══════════════════════════════════════════════
         $('loginBtn').addEventListener('click', async () => {
             const email = $('loginEmail').value.trim();
             const password = $('loginPassword').value;
@@ -2343,9 +2272,6 @@
             } finally { setAuthLoading(false); }
         });
 
-        // ═══════════════════════════════════════════════
-        // Auth state
-        // ═══════════════════════════════════════════════
         AUTH.onAuthStateChanged(user => {
             if (user) {
                 currentUser = user;
@@ -2365,9 +2291,6 @@
             }
         });
 
-        // ═══════════════════════════════════════════════
-        // Profile
-        // ═══════════════════════════════════════════════
         async function loadProfile() {
             if (!currentUser) return;
             const snap = await DB.ref('users/' + currentUser.uid + '/profile').once('value');
@@ -2385,9 +2308,6 @@
             $('editNameInput').value = name;
         }
 
-        // ═══════════════════════════════════════════════
-        // Load images
-        // ═══════════════════════════════════════════════
         function loadUserImages() {
             if (!currentUser) return;
             DB.ref('users/' + currentUser.uid + '/images').on('value', snapshot => {
@@ -2403,9 +2323,6 @@
             });
         }
 
-        // ═══════════════════════════════════════════════
-        // Gallery
-        // ═══════════════════════════════════════════════
         function renderGallery() {
             const gallery = $('gallery');
             if (userImages.length === 0) {
@@ -2445,9 +2362,6 @@
             }
         };
 
-        // ═══════════════════════════════════════════════
-        // History
-        // ═══════════════════════════════════════════════
         function renderHistory() {
             const list = $('historyList');
             if (userImages.length === 0) {
@@ -2471,9 +2385,6 @@
             $('historyCount').textContent = userImages.length;
         }
 
-        // ═══════════════════════════════════════════════
-        // Stats
-        // ═══════════════════════════════════════════════
         function updateStats() {
             const total = userImages.length;
             const totalSize = userImages.reduce((s, i) => s + (i.size || 0), 0);
@@ -2490,9 +2401,6 @@
             $('statDays').textContent = days.size;
         }
 
-        // ═══════════════════════════════════════════════
-        // File selection
-        // ═══════════════════════════════════════════════
         const dropZone = $('dropZone');
         const fileInput = $('fileInput');
         const preview = $('preview');
@@ -2547,9 +2455,6 @@
             result.classList.remove('show');
         });
 
-        // ═══════════════════════════════════════════════
-        // Upload
-        // ═══════════════════════════════════════════════
         uploadBtn.addEventListener('click', async () => {
             if (!currentUser || !selectedFile) return;
             loader.classList.add('show');
@@ -2599,9 +2504,6 @@
             copyToClipboard(tag, t('copied_img'));
         };
 
-        // ═══════════════════════════════════════════════
-        // Tabs switching
-        // ═══════════════════════════════════════════════
         function switchView(view) {
             document.querySelectorAll('.tab-pill').forEach(b => b.classList.toggle('active', b.dataset.view === view));
             document.querySelectorAll('.nav-item').forEach(b => b.classList.toggle('active', b.dataset.view === view));
@@ -2621,9 +2523,6 @@
             $('newPassConfirmInput').value = '';
         });
 
-        // ═══════════════════════════════════════════════
-        // Profile modal
-        // ═══════════════════════════════════════════════
         $('profileBtn').addEventListener('click', () => {
             $('profileModal').classList.add('show');
             $('currentPassInput').value = '';
@@ -2701,7 +2600,7 @@
 
         initAds();
 
-        console.log('🔴 ImageHub — Red & Black Theme + Bilingual AR/EN');
+        console.log('🖼️ ImageHub — Red & Black Theme + Cloud Upload Icon');
     </script>
 </body>
 </html>
